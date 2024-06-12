@@ -1,0 +1,52 @@
+{
+  "name": "TaintedFlowAnalysis",
+  "displayName": "Tainted Flow Analysis",
+  "description": "A VS Code extension to analyze and highlight tainted flow in code.",
+  "version": "0.0.1",
+  "author": "Github:Singlenine",
+  "engines": {
+    "vscode": "^1.76.1"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.runTaintedFlowAnalysis",
+    "onCommand:extension.runTaintedFlowAnalysisOnExplorer"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.runTaintedFlowAnalysis",
+        "title": "Run Tainted Flow Analysis"
+      },
+      {
+        "command": "extension.runTaintedFlowAnalysisOnExplorer",
+        "title": "Run Tainted Flow Analysis on Explorer"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.runTaintedFlowAnalysisOnExplorer",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.76.1",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
